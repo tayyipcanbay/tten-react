@@ -1,7 +1,8 @@
 import React,{useState,useEffect} from "react";
 import "../styles/panel.css";
+import Panel from "../components/panel";
 
-const Panel = () => {
+const Ask = () => {
     const [mail, setMail] = useState("");
     const [token, setToken] = useState("");
     const [userId, setUserId] = useState("");
@@ -11,6 +12,7 @@ const Panel = () => {
         localStorage.removeItem("mail");
         localStorage.removeItem("token");
         localStorage.removeItem("userId");
+        window.location.href = "/";
     }
 
     useEffect(() => {
@@ -22,15 +24,14 @@ const Panel = () => {
         } else {
             setIsLogin(false);
             deleteLocalStorage();
-            window.location.href = "/";
         }
     }, [mail, token, userId]);
 
     return (
         <div className="panel-body">
-            Panel
+            <Panel props={deleteLocalStorage}/>
         </div>
     )
 }
 
-export default Panel;
+export default Ask;

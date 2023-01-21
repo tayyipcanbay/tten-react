@@ -1,5 +1,5 @@
 .login-body{
-    background: #f1f1f1;
+    background: rgb(43, 43, 43);
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
     color: #666;
@@ -10,28 +10,30 @@
     height: 40%;
     text-align: center;
     margin: 0 auto;
-    margin-top: 200px;
+    margin-top: 100px;
 }
 .login-body h1{
     font-size: 24px;
     font-weight: 700;
     text-transform: uppercase;
-    color: #555;
+    color: #fff;
     margin-bottom: 20px;
     padding: 20px;
 }
 .login-body form{
-    background: #fff;
+    background: #555;
     padding: 30px;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 }
 .login-body label{
     font-weight: 600;
     font-size: 13px;
+    color: #fff;
 }
 .login-body input{
-    background: #f8f8f8;
+    background: #888;
     border: 1px solid #f1f1f1;
+    border-radius: 10px;
     padding: 12px;
     width: 100%;
     box-sizing: border-box;
