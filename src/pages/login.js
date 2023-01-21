@@ -8,6 +8,7 @@ const Login = () => {
     const tokenRef = React.createRef();
     const [mail, setMail] = useState("");
     const [token, setToken] = useState("");
+    const [userId, setUserId] = useState("");
     const [isLogin, setIsLogin] = useState(false);
 
     const handleSubmit = (e) => {
@@ -45,17 +46,21 @@ const Login = () => {
                 console.log(res);
                 if (res.status === 200) {
                     setIsLogin(true);
-                    createLocalStorage(mail, token, res.userId);
+                    setUserId(res.userId);
+                    createLocalStorage(mail, token, userId);
+                    console.log("Login successful");
+                    window.location.href = "/panel";
                 } else {
                     setIsLogin(false);
                     deleteLocalStorage();
+                    console.log("Login failed");
                 }
             })
             .catch(err => {
                 console.log(err);
             })
         }
-    }, [mail, token])
+    }, [mail, token, userId])
 
     if (isLogin) {
         return (
