@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from "react";
-import "../styles/panel.css";
+import "../styles/ask.css";
 import Panel from "../components/panel";
+import Search from "../components/search";
 
 const Ask = () => {
     const [mail, setMail] = useState("");
@@ -28,8 +29,9 @@ const Ask = () => {
     }, [mail, token, userId]);
 
     return (
-        <div className="panel-body">
-            <Panel props={deleteLocalStorage}/>
+        <div className="ask-body">
+            <Panel deleteLocalStorage={deleteLocalStorage}/>
+            <Search/>
         </div>
     )
 }

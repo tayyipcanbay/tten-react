@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "../styles/panel.css";
 
 const Panel = (props) => {
     const [mail, setMail] = useState("");
@@ -12,7 +13,7 @@ const Panel = (props) => {
     }, [mail, token, userId]);
     
     return (
-        <div>
+        <div className="panel-body">
             <div>
                 Logged in with: {mail}
             </div>
@@ -21,7 +22,7 @@ const Panel = (props) => {
             </div>
             <div>
                 Logout
-                <button type="submit">
+                <button onClick={props.deleteLocalStorage} type="submit">
                     Logout
                 </button>
             </div>

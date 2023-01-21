@@ -49,7 +49,7 @@ const Login = () => {
                     setUserId(res.userId);
                     createLocalStorage(mail, token, userId);
                     console.log("Login successful");
-                    window.location.href = "/panel";
+                    window.location.href = "/ask";
                 } else {
                     setIsLogin(false);
                     deleteLocalStorage();
