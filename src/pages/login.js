@@ -15,6 +15,17 @@ const Login = () => {
         setMail(mailRef.current.value);
         setToken(tokenRef.current.value);
     }
+    const createLocalStorage = (mail,token,userId) => {
+        localStorage.setItem("mail", mail);
+        localStorage.setItem("token", token);
+        localStorage.setItem("userId", userId);
+    }
+    const deleteLocalStorage = () => {
+        localStorage.removeItem("mail");
+        localStorage.removeItem("token");
+        localStorage.removeItem("userId");
+    }
+
 
     useEffect(() => {
         if (mail !== "" && token !== "") {
@@ -34,13 +45,15 @@ const Login = () => {
                 console.log(res);
                 if (res.status === 200) {
                     setIsLogin(true);
+                    createLocalStorage(mail, token, res.userId);
                 } else {
                     setIsLogin(false);
+                    deleteLocalStorage();
                 }
             })
-            // .catch(err => {
-            //     console.log(err);
-            // })
+            .catch(err => {
+                console.log(err);
+            })
         }
     }, [mail, token])
 
