@@ -2,6 +2,7 @@ import React,{useState,useEffect} from "react";
 import "../styles/ask.css";
 import Panel from "../components/panel";
 import Search from "../components/search";
+import Chat from "../components/chat";
 
 const Ask = () => {
     const [mail, setMail] = useState("");
@@ -31,7 +32,12 @@ const Ask = () => {
     return (
         <div className="ask-body">
             <Panel deleteLocalStorage={deleteLocalStorage}/>
-            <Search/>
+            <Chat/>
+            <div className="input">
+                <input type="file" id="file"/>
+                <input type="text" placeholder="Type a message" />
+                <input type ="submit" value="Ask Me!" />
+            </div>
         </div>
     )
 }

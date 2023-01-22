@@ -1,0 +1,60 @@
+.chat{
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #ccc;
+    margin: 0 auto;
+    padding: 10px;
+    width: 500px;
+}
+.messages{
+    height: 300px;
+    overflow: auto;
+    padding: 10px;
+}
+.message{
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+.you{
+    color: #000;
+    border: 1px solid blue;
+    min-width: 60% !important;
+    float: left;
+}
+.me{
+    color: #000;
+    border: 1px solid red;
+    min-width: 60% !important;
+    float: right;
+}
+.input{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: #fff;
+}
+.input input[type='file']{
+    
+}
+.input input[type='text']{
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+.input input[type='submit']{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    background: #fff;
+}
