@@ -1,14 +1,18 @@
 import React,{useState,useEffect} from "react";
 import "../styles/ask.css";
 import Panel from "../components/panel";
-import Search from "../components/search";
 import Chat from "../components/chat";
+import Inputs from "../components/inputs";
 
 const Ask = () => {
     const [mail, setMail] = useState("");
     const [token, setToken] = useState("");
     const [userId, setUserId] = useState("");
     const [isLogin, setIsLogin] = useState(false);
+
+    const [fileInput, setFileInput] = useState("");
+    const [textInput, setTextInput] = useState("");
+
 
     const deleteLocalStorage = () => {
         localStorage.removeItem("mail");
@@ -27,17 +31,17 @@ const Ask = () => {
             setIsLogin(false);
             deleteLocalStorage();
         }
-    }, [mail, token, userId]);
+    }, [mail, token, userId, isLogin]);
+
+    const getInputs = () => {
+        
+    }
 
     return (
         <div className="ask-body">
             <Panel deleteLocalStorage={deleteLocalStorage}/>
             <Chat/>
-            <div className="input">
-                <input type="file" id="file"/>
-                <input type="text" placeholder="Type a message" />
-                <input type ="submit" value="Ask Me!" />
-            </div>
+            <Inputs getInputs={getInputs}/>
         </div>
     )
 }

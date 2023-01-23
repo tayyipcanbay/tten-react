@@ -1,0 +1,17 @@
+.message{
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+.you{
+    color: #000;
+    border: 1px solid blue;
+    min-width: 60% !important;
+    float: left;
+}
+.me{
+    color: #000;
+    border: 1px solid red;
+    min-width: 60% !important;
+    float: right;
+}
