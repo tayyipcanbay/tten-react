@@ -29,19 +29,24 @@
     min-width: 60% !important;
     float: right;
 }
+
+
 .input{
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     background: #fff;
 }
 .input input[type='file']{
-    
+    /* remove text */
+    color: transparent;
+    width: 80px;
 }
 .input input[type='text']{
     width: 80%;
