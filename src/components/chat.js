@@ -7,44 +7,48 @@ let welcomeMessage = [{
     message: "Welcome to Ask Me!"
 }]
 
-let tempChat= [
-    {
-        from: true,
-        message: "Hello"
-    },
-    {
-        from: false,
-        message: "Hi"
-    },
-    {
-        from: true,
-        message: "How are you?"
-    },
-    {
-        from: false,
-        message: "I'm fine, thanks"
-    },
-    {
-        from: true,
-        message: "What about you?"
-    },
-    {
-        from: false,
-        message: "I'm fine too"
-    },
-    {
-        from: true,
-        message: "Nice to hear that"
-    },
-    {
-        from: false,
-        message: "Yeah"
-    },
+// let tempChat= [
+//     {
+//         from: true,
+//         message: "Hello"
+//     },
+//     {
+//         from: false,
+//         message: "Hi"
+//     },
+//     {
+//         from: true,
+//         message: "How are you?"
+//     },
+//     {
+//         from: false,
+//         message: "I'm fine, thanks"
+//     },
+//     {
+//         from: true,
+//         message: "What about you?"
+//     },
+//     {
+//         from: false,
+//         message: "I'm fine too"
+//     },
+//     {
+//         from: true,
+//         message: "Nice to hear that"
+//     },
+//     {
+//         from: false,
+//         message: "Yeah"
+//     },
 
-]
+// ]
 
-const Chat = () => {
-    const [messages, setMessages] = useState(welcomeMessage);
+const Chat = (props) => {
+    const [messages, setMessages] = useState(props.messages);
+    
+    useEffect(()=>{
+        setMessages(props.messages);
+    },[props.messages])
 
     const renderMessages = () => {
         return messages.map((message, index) => {

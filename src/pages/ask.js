@@ -4,14 +4,20 @@ import Panel from "../components/panel";
 import Chat from "../components/chat";
 import Inputs from "../components/inputs";
 
-const reqFileURL = "http://localhost:3131/ask-file";
-const reqTextURL = "http://localhost:3131/ask-text";
+const reqFileURL = "http://192.168.1.249:3131/ask-file";
+const reqTextURL = "http://192.168.1.249:3131/ask-text";
+
+let welcomeMessage = [{
+    from: false,
+    message: "Welcome to Ask Me!"
+}]
 
 const Ask = () => {
     const [mail, setMail] = useState("");
     const [token, setToken] = useState("");
     const [userId, setUserId] = useState("");
     const [isLogin, setIsLogin] = useState(false);
+    const [messages, setMessages] = useState(welcomeMessage);
 
     const [fileInput, setFileInput] = useState("");
     const [textInput, setTextInput] = useState("");
@@ -66,6 +72,7 @@ const Ask = () => {
             console.log("Query started with text");
             type = "text";
             prompt = textInput;
+            createMessage({from: true, message: textInput});
         }
         let query ={
             "user":{
@@ -82,6 +89,7 @@ const Ask = () => {
     }
 
     const sendQuery = (query) => {
+        console.log(query["type"]==="file"?reqFileURL:reqTextURL)
         fetch(query["type"]==="file"?reqFileURL:reqTextURL,{
             method: "POST",
             headers: {
@@ -91,14 +99,19 @@ const Ask = () => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data);
-            return data;
+            console.log(data)
+            createMessage({from: false, message: data["answer"]["0"]})
         })
     }
+
+    const createMessage = (message) => {
+        setMessages([...messages, message]);
+    }
+
     return (
         <div className="ask-body">
             <Panel deleteLocalStorage={deleteLocalStorage}/>
-            <Chat/>
+            <Chat messages={messages}/>
             <Inputs getInputs={getInputs}/>
         </div>
     )
