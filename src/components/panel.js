@@ -14,14 +14,13 @@ const Panel = (props) => {
     
     return (
         <div className="panel-body">
-            <div>
-                Logged in with: {mail}
+            <div id="mail" className="panel-item">
+                Logged in with: <br></br>{mail}
             </div>
-            <div>
-                Token: {token}
+            <div id="token" className="panel-item">
+                Token: <br></br>{token}
             </div>
-            <div>
-                Logout
+            <div id="logout" className="panel-item">
                 <button onClick={props.deleteLocalStorage} type="submit">
                     Logout
                 </button>

@@ -16,9 +16,12 @@ const Inputs = (props) => {
 
     return(
         <div className="input">
-            <input ref={fileRef} type="file" id="file"/>
+            <label id="custom-file-upload">
+                <input ref={fileRef} type="file" id="file"/>
+                <span>Upload a file</span>
+            </label>
             <input ref={textRef} type="text" placeholder="Type a message" />
-            <input onClick={handleSubmit} ref={submitRef} type ="submit" value="Ask Me!" />
+            <input onClick={handleSubmit} ref={submitRef} type ="submit" value="Ask" />
         </div>
     )
 }

@@ -1,17 +1,19 @@
 .message{
     border-bottom: 1px solid #ccc;
+    border-radius: 20px;
     margin-bottom: 10px;
-    padding-bottom: 10px;
+    padding: 10px;
+    background: #FFFBEB;
+    min-width: 60% !important;
+    color: black !important;
 }
 .you{
-    color: #000;
-    border: 1px solid blue;
-    min-width: 60% !important;
     float: left;
 }
 .me{
-    color: #000;
-    border: 1px solid red;
-    min-width: 60% !important;
     float: right;
+}
+.message-content p{
+    margin: 0;
+    padding: 0;
 }

@@ -4,7 +4,7 @@ import Message from "./message";
 
 let welcomeMessage = [{
     from: false,
-    message: "Welcome to Ask Me!"
+    message: "Welcome to TTEN!"
 }]
 
 // let tempChat= [

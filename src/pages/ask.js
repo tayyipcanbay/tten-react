@@ -6,6 +6,8 @@ import Inputs from "../components/inputs";
 
 const reqFileURL = "http://192.168.1.249:3131/ask-file";
 const reqTextURL = "http://192.168.1.249:3131/ask-text";
+// const reqFileURL = "http://localhost:3131/ask-file";
+// const reqTextURL = "http://localhost:3131/ask-text";
 
 let welcomeMessage = [{
     from: false,

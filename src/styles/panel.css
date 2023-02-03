@@ -1,4 +1,32 @@
 .panel-body{
-    background-color: gray;
+    background-color: #251749;
     height: 10vh;
+    width: 100%;
+    display: flex;
+    flex: auto;
+    justify-content: center;
+    align-items: center;
 }
+.panel-item{
+    margin: 10px;
+    color: #FFFBEB;
+    font-size: 15px;
+}
+.panel-item button{
+    background-color: rgb(150, 57, 57);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 15px;
+    cursor: pointer;
+}
+.panel-item button:hover{
+    background-color: rgb(123, 0, 0);
+}
+@media screen and (max-width: 768px) {
+    #token{
+        display: none;
+    }
+}
+    
