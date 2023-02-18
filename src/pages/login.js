@@ -1,8 +1,8 @@
 import React ,{useState, useEffect} from "react";
 import "../styles/login.css";
 
-const reqURL = "http://192.168.1.174:3131/login";
-// const reqURL = "http://localhost:3131/login";
+// const reqURL = "http://192.168.1.174:3131/login";
+const reqURL = "http://localhost:3131/login";
 
 
 const Login = () => {

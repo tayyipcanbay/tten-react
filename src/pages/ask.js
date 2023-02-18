@@ -4,10 +4,10 @@ import Panel from "../components/panel";
 import Chat from "../components/chat";
 import Inputs from "../components/inputs";
 
-const reqFileURL = "http://192.168.1.249:3131/ask-file";
-const reqTextURL = "http://192.168.1.249:3131/ask-text";
-// const reqFileURL = "http://localhost:3131/ask-file";
-// const reqTextURL = "http://localhost:3131/ask-text";
+// const reqFileURL = "http://192.168.1.249:3131/ask-image";
+// const reqTextURL = "http://192.168.1.249:3131/ask-text";
+const reqFileURL = "http://localhost:3131/ask-image";
+const reqTextURL = "http://localhost:3131/ask-text";
 
 let welcomeMessage = [{
     from: false,
@@ -87,11 +87,10 @@ const Ask = () => {
         }
         console.log("query",query);
         let res= sendQuery(query);
-        console.log("res",res);
+        console.log("res",res); 
     }
 
     const sendQuery = (query) => {
-        console.log(query["type"]==="file"?reqFileURL:reqTextURL)
         fetch(query["type"]==="file"?reqFileURL:reqTextURL,{
             method: "POST",
             headers: {
@@ -99,7 +98,7 @@ const Ask = () => {
             },
             body: JSON.stringify(query)
         })
-        .then(res => res.json())
+        .then(query["type"]==="file"?res=>res.blob():res=>res.json())
         .then(data => {
             console.log(data)
             createMessage({from: false, message: data["answer"]["0"]})
@@ -108,6 +107,7 @@ const Ask = () => {
 
     const createMessage = (message) => {
         setMessages([...messages, message]);
+        console.log("messages Ask.js",messages);
     }
 
     return (

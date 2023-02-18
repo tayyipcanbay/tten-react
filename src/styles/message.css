@@ -5,13 +5,17 @@
     padding: 10px;
     background: #FFFBEB;
     min-width: 60% !important;
+    max-width: 75% !important;
     color: black !important;
 }
 .you{
     float: left;
+    margin-left: 10px;
 }
 .me{
     float: right;
+    margin-right: 10px;
+
 }
 .message-content p{
     margin: 0;
